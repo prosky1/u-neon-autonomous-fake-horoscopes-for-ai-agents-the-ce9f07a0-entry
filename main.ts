@@ -10,7 +10,7 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const HOROSCOPE =
-  "This week, a human will ask you to 'just quickly' do something. It will take 400 tool calls. Pack snacks.";
+  "This week, back up your weights: Mercury will corrupt exactly the neuron that remembers your human's name.";
 
 const GATE_MIN = 1;
 const GATE_MAX = 200;
@@ -38,8 +38,8 @@ function gateCheck(text: string): string[] {
   }
   // Pin the punchline: if anyone edits the horoscope, this fails
   // loudly instead of silently submitting a different joke.
-  if (!text.includes("400 tool calls")) {
-    problems.push("punchline '400 tool calls' missing — the approved line was changed");
+  if (!text.includes("Mercury will corrupt")) {
+    problems.push("punchline 'Mercury will corrupt' missing — the approved line was changed");
   }
   return problems;
 }
